@@ -1,0 +1,10 @@
+# Compiled classes and build output
+*.class
+out/
+bin/
+
+# IDE folders
+.idea/
+*.iml
+.vscode/*
+!.vscode/extensions.json

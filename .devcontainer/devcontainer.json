@@ -1,0 +1,25 @@
+{
+  "name": "Java 21",
+  "image": "mcr.microsoft.com/devcontainers/java:1-21-bookworm",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "redhat.java",
+        "vscjava.vscode-java-debug"
+      ],
+      "settings": {
+        "workbench.startupEditor": "none",
+        "java.help.firstView": "none",
+        "java.help.showReleaseNotes": false,
+        "redhat.telemetry.enabled": false,
+        "java.debug.settings.console": "integratedTerminal",
+        "java.configuration.updateBuildConfiguration": "automatic"
+      }
+    },
+    "codespaces": {
+      "openFiles": [
+        "GuessingGame.java"
+      ]
+    }
+  }
+}
