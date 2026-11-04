@@ -7,6 +7,7 @@ public class GuessingGame {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
 
+        // Create random number generator
         Random random = args.length > 0
                 ? new Random(Long.parseLong(args[0]))
                 : new Random();
@@ -16,6 +17,7 @@ public class GuessingGame {
         String playAgain;
 
         do {
+            // Generate a new secret number for every round
             int secret = random.nextInt(100) + 1;
 
             playRound(scanner, secret);
@@ -26,6 +28,7 @@ public class GuessingGame {
         } while (playAgain.equalsIgnoreCase("y"));
 
         System.out.println("Thanks for playing!");
+
         scanner.close();
     }
 
@@ -42,11 +45,13 @@ public class GuessingGame {
             System.out.print("Your guess: ");
             int guess = scanner.nextInt();
 
+            // Reject invalid guesses
             if (guess < 1 || guess > 100) {
                 System.out.println("Please guess a number from 1 to 100.");
                 continue;
             }
 
+            // Count only valid guesses
             attempts++;
 
             won = checkGuess(guess, secret);
@@ -64,9 +69,11 @@ public class GuessingGame {
         if (guess > secret) {
             System.out.println("Too high!");
             return false;
+
         } else if (guess < secret) {
             System.out.println("Too low!");
             return false;
+
         } else {
             System.out.println("Correct!");
             return true;
